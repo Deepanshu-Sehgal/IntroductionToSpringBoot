@@ -6,8 +6,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class DBService {
 
-    @Autowired
-    private DB db;
+    //field injector
+//    @Autowired
+    final private DB db;
+
+    public DBService(DB db)
+    {
+        this.db = db;
+    }
 
     String getData() {
         return db.getData();
